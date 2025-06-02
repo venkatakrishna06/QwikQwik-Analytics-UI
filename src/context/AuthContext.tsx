@@ -1,10 +1,9 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { jwtDecode } from 'jwt-decode';
-import axios from 'axios';
-import { toast } from 'sonner';
-import { authService, LoginCredentials, AuthResponse } from '@/lib/api/services/auth.service';
-import { tokenService } from '@/lib/token.service';
-import { api } from '@/lib/api/axios';
+import {createContext, ReactNode, useContext, useEffect, useState} from 'react';
+import {jwtDecode} from 'jwt-decode';
+import {toast} from 'sonner';
+import {AuthResponse, authService, LoginCredentials} from '@/lib/api/services/auth.service';
+import {tokenService} from '@/lib/token.service';
+import {api} from '@/lib/api/axios';
 
 interface User {
   id: number;

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Loader2 } from 'lucide-react';
-import { analyticsService } from '@/lib/api/services/analytics.service';
-import { toast } from 'sonner';
-import { cn } from '@/lib/utils';
+import {useEffect, useState} from 'react';
+import {Loader2} from 'lucide-react';
+import {analyticsService} from '@/lib/api/services/analytics.service';
+import {toast} from 'sonner';
+import {cn} from '@/lib/utils';
 
 type DashboardTab = 'sales' | 'menu_items' | 'staff_performance' | 'table_utilisation' | 'payment_methods' | 'hourly-sales' | 'customers';
 
@@ -34,8 +34,8 @@ export default function Dashboard() {
         if (response) {
           setEmbedUrl(response.iframeUrl);
         } else {
-          setError(response.error || 'Failed to load dashboard');
-          toast.error(response.error || 'Failed to load dashboard');
+          setError('Failed to load dashboard');
+          toast.error( 'Failed to load dashboard');
         }
       } catch (err) {
         setError('An error occurred while loading the dashboard');

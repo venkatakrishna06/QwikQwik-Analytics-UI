@@ -1,5 +1,5 @@
-import { api } from '../axios';
-import { API_ENDPOINTS } from '../endpoints';
+import {api} from '../axios';
+import {API_ENDPOINTS} from '../endpoints';
 
 export interface LoginCredentials {
   email: string;

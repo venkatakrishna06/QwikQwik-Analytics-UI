@@ -1,5 +1,4 @@
-import { analyticsApi } from '../axios';
-import { API_ENDPOINTS } from '../endpoints';
+import {analyticsApi} from '../axios';
 
 export interface AnalyticsEmbedResponse {
   iframeUrl: string;

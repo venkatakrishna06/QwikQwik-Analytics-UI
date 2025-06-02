@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Toaster } from 'sonner';
-import { AuthProvider } from './context/AuthContext';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {Toaster} from 'sonner';
+import {AuthProvider} from './context/AuthContext';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';

@@ -1,6 +1,6 @@
-import { LogOut, User } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
-import { Button } from './ui/button';
+import {LogOut} from 'lucide-react';
+import {useAuth} from '../context/AuthContext';
+import {Button} from './ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,

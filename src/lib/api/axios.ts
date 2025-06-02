@@ -1,10 +1,12 @@
 import axios from 'axios';
-import { tokenService } from '@/lib/token.service';
+import {tokenService} from '@/lib/token.service';
 
 // Base URL for main API
+// @ts-ignore
 const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 // Base URL for analytics API (different from main API)
+// @ts-ignore
 const analyticsBaseURL = import.meta.env.VITE_ANALYTICS_API_URL || 'http://localhost:8081';
 
 export const api = axios.create({
