@@ -171,12 +171,6 @@ export default function Login() {
                 'Sign in'
               )}
             </Button>
-
-            <div className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
-              <p>Use these credentials for demo:</p>
-              <p className="font-medium">Email: admin@example.com</p>
-              <p className="font-medium">Password: Password123!</p>
-            </div>
           </form>
         </div>
       </div>
