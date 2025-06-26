@@ -3,11 +3,11 @@ import {tokenService} from '@/lib/token.service';
 
 // Base URL for main API
 // @ts-ignore
-const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+const baseURL = 'https://quickquick-backend-341757523815.asia-south1.run.app';
 
 // Base URL for analytics API (different from main API)
 // @ts-ignore
-const analyticsBaseURL = import.meta.env.VITE_ANALYTICS_API_URL || 'http://localhost:8081';
+const analyticsBaseURL = import.meta.env.VITE_ANALYTICS_API_URL || 'https://quickquikc-analytics-api.onrender.com';
 
 export const api = axios.create({
   baseURL,
