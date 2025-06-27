@@ -1,8 +1,15 @@
 import {useEffect, useState} from 'react';
-import {Loader2} from 'lucide-react';
+import {ChevronDown, Loader2} from 'lucide-react';
 import {analyticsService} from '@/lib/api/services/analytics.service';
 import {toast} from 'sonner';
 import {cn} from '@/lib/utils';
+import {useMediaQuery} from '@/lib/hooks/useMediaQuery';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 type DashboardTab = 'sales' | 'menu_items' | 'staff_performance' | 'table_utilisation' | 'payment_methods' | 'hourly-sales' | 'customers';
 
@@ -21,16 +28,19 @@ export default function Dashboard() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Check if the screen is mobile-sized
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   // Fetch embed URL when active tab changes
   useEffect(() => {
     const fetchEmbedUrl = async () => {
       try {
         setLoading(true);
         setError(null);
-        
+
         // Make API call to get embed URL for the selected dashboard
         const response = await analyticsService.getEmbedUrl(activeTab);
-        
+
         if (response) {
           setEmbedUrl(response.iframeUrl);
         } else {
@@ -52,26 +62,53 @@ export default function Dashboard() {
     <div>
       {/* Tab Navigation */}
       <div className="border-b">
-        <div className="flex overflow-x-auto">
-          {TABS.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={cn(
-                "px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors focus:outline-none",
-                activeTab === tab.id
-                  ? "border-b-2 border-primary text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-              )}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+        {isMobile ? (
+          // Mobile dropdown navigation
+          <div className="p-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="w-full flex items-center justify-between px-4 py-2 text-sm font-medium border rounded-md bg-background hover:bg-muted/50 transition-colors focus:outline-none">
+                {TABS.find(tab => tab.id === activeTab)?.label || 'Select Dashboard'}
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-full min-w-[200px]">
+                {TABS.map((tab) => (
+                  <DropdownMenuItem
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={cn(
+                      "cursor-pointer",
+                      activeTab === tab.id && "bg-muted font-medium"
+                    )}
+                  >
+                    {tab.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        ) : (
+          // Desktop horizontal tabs
+          <div className="flex overflow-x-auto">
+            {TABS.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={cn(
+                  "px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors focus:outline-none",
+                  activeTab === tab.id
+                    ? "border-b-2 border-primary text-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                )}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Dashboard Content */}
-      <div className="rounded-lg border bg-card shadow-sm min-h-[600px] relative">
+      <div className="rounded-lg border mt-2 bg-card shadow-sm min-h-[600px] relative">
         {loading ? (
           <div className="absolute inset-0 flex items-center justify-center">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
