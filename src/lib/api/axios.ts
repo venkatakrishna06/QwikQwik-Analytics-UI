@@ -7,7 +7,7 @@ const baseURL = 'https://quickquick-backend-341757523815.asia-south1.run.app';
 
 // Base URL for analytics API (different from main API)
 // @ts-ignore
-const analyticsBaseURL = import.meta.env.VITE_ANALYTICS_API_URL || 'https://quickquikc-analytics-api.onrender.com';
+const analyticsBaseURL = import.meta.env.VITE_ANALYTICS_API_URL
 
 export const api = axios.create({
   baseURL,
