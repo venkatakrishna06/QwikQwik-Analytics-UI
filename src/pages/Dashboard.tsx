@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {ChevronDown, Loader2, BarChart3, Users, Utensils, Table, CreditCard, Clock, UserCheck, TrendingUp, Activity} from 'lucide-react';
+import {ChevronDown, Utensils, Table, CreditCard, UserCheck, TrendingUp, Activity} from 'lucide-react';
 import {analyticsService} from '@/lib/api/services/analytics.service';
 import {toast} from 'sonner';
 import {cn} from '@/lib/utils';
