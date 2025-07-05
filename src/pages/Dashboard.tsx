@@ -1,15 +1,20 @@
 import {useEffect, useState} from 'react';
-import {ChevronDown, Utensils, Table, CreditCard, UserCheck, TrendingUp, Activity, Sparkles, BarChart3, RefreshCw} from 'lucide-react';
+import {
+  BarChart3,
+  ChevronDown,
+  CreditCard,
+  RefreshCw,
+  Sparkles,
+  Table,
+  TrendingUp,
+  UserCheck,
+  Utensils
+} from 'lucide-react';
 import {analyticsService} from '@/lib/api/services/analytics.service';
 import {toast} from 'sonner';
 import {cn} from '@/lib/utils';
 import {useMediaQuery} from '@/lib/hooks/useMediaQuery';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,} from '@/components/ui/dropdown-menu';
 import {Button} from '@/components/ui/button';
 
 type DashboardTab = 'sales' | 'menu_items' | 'staff_performance' | 'table_utilisation' | 'payment_methods' | 'hourly-sales' | 'customers';

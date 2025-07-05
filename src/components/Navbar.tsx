@@ -1,13 +1,13 @@
-import {LogOut, User, Settings, Bell, Search, Menu, X, BarChart3, Sparkles} from 'lucide-react';
+import {BarChart3, Bell, LogOut, Menu, Search, Settings, Sparkles, User, X} from 'lucide-react';
 import {useAuth} from '../context/AuthContext';
 import {Button} from './ui/button';
 import {useState} from 'react';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 
 export default function Navbar() {
