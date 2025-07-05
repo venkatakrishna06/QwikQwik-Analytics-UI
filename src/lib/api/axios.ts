@@ -7,7 +7,7 @@ const baseURL = 'https://quickquick-backend-341757523815.asia-south1.run.app';
 
 // Base URL for analytics API (different from main API)
 // @ts-ignore
-const analyticsBaseURL = import.meta.env.VITE_ANALYTICS_API_URL
+const analyticsBaseURL = import.meta.env.VITE_ANALYTICS_API_URL || 'http:localhost:8080';
 
 export const api = axios.create({
   baseURL,

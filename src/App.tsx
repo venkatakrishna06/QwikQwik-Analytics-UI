@@ -3,6 +3,7 @@ import {Toaster} from 'sonner';
 import {AuthProvider} from './context/AuthContext';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Unauthorized from './pages/Unauthorized';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
 
@@ -12,8 +13,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/unauthorized" element={<Unauthorized />} />
           <Route path="/" element={
-            <ProtectedRoute>
+            <ProtectedRoute requiredRole="admin">
               <Layout>
                 <Dashboard />
               </Layout>
