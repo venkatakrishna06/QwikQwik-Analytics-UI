@@ -3,7 +3,6 @@ import {
   ChevronDown,
   CreditCard,
   RefreshCw,
-  Sparkles,
   Table,
   TrendingUp,
   UserCheck,
