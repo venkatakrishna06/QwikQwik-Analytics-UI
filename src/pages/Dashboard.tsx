@@ -152,37 +152,6 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          
-          {/* Floating stats cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <div className="flex items-center gap-3">
-                <TrendingUp className="h-6 w-6 text-green-300" />
-                <div>
-                  <p className="text-sm text-blue-100">Live Analytics</p>
-                  <p className="text-lg font-semibold">Real-time Data</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <div className="flex items-center gap-3">
-                <Activity className="h-6 w-6 text-blue-300" />
-                <div>
-                  <p className="text-sm text-blue-100">Dashboard Views</p>
-                  <p className="text-lg font-semibold">{TABS.length} Available</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <div className="flex items-center gap-3">
-                <Sparkles className="h-6 w-6 text-yellow-300" />
-                <div>
-                  <p className="text-sm text-blue-100">Status</p>
-                  <p className="text-lg font-semibold">All Systems Active</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
